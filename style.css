@@ -205,6 +205,22 @@ a:hover {
   margin-top: 5px;
 }
 
+.unsubscribe-reason {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.unsubscribe-reason label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.unsubscribe-reason label input[type="radio"] {
+  margin-top: 1px;
+}
+
 /* ----------------------------------------------------------------------------
    UTILITIES
    - Simple utility classes for common tasks

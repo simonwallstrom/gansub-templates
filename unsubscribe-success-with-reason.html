@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unsubscribe successful(with reason) · Get a Newsletter</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" href="favicon.svg" />
   </head>
   <body>
     <div class="site-wrapper">
@@ -12,6 +13,46 @@
       <p>
         You will no longer recieve newsletters from this list. Was it a mistake?
         <a href="/resubscribe.html">Resubscribe here</a>.
+      </p>
+      <p>
+        <strong
+          >If you have a moment, can you tell us why you unsubscribed?</strong
+        >
+      </p>
+      <div class="unsubscribe-reason">
+        <label for="notWant">
+          <input name="reason" type="radio" name="notWant" id="notWant" />
+          <span>I no longer want to receive these newsletters</span>
+        </label>
+        <label for="neverSignedUp">
+          <input
+            name="reason"
+            type="radio"
+            name="neverSignedUp"
+            id="neverSignedUp"
+          />
+          <span>I never signed up for this list</span>
+        </label>
+        <label for="inappropriate">
+          <input
+            name="reason"
+            type="radio"
+            name="inappropriate"
+            id="inappropriate"
+          />
+          <span>The newsletters are inappropriate</span>
+        </label>
+        <label for="spam">
+          <input name="reason" type="radio" name="spam" id="spam" />
+          <span>The newsletters are spam and should be reported</span>
+        </label>
+        <label for="other">
+          <input name="reason" type="radio" name="other" id="other" />
+          <span>Other reason</span>
+        </label>
+      </div>
+      <p class="mt-6">
+        <a href="/unsubscribe-success.html" class="button">Submit</a>
       </p>
     </div>
     <div class="site-footer">
