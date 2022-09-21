@@ -152,7 +152,7 @@ a:hover {
 ---------------------------------------------------------------------------- */
 
 .label {
-  margin-bottom: 5px;
+  padding-bottom: 5px;
   display: block;
   font-weight: 500;
 }
@@ -164,6 +164,10 @@ a:hover {
   width: 100%;
 }
 
+.input:hover {
+  border-color: var(--gray-400);
+}
+
 .button {
   padding: 8px 20px;
   background: var(--green-600);
@@ -173,7 +177,6 @@ a:hover {
   border-radius: 8px;
   display: inline-block;
   font-weight: 500;
-  transition: 0.2s all;
   cursor: pointer;
   text-decoration: none;
 }
