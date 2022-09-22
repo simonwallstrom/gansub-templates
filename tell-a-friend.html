@@ -17,7 +17,14 @@
       </p>
       <div class="mt-6">
         <label class="label" for="name">Your name</label>
-        <input class="input" type="text" name="name" id="name" />
+        <input
+          id="name-input"
+          class="input"
+          type="text"
+          required="true"
+          name="name"
+          id="name"
+        />
       </div>
       <div class="mt-4">
         <label class="label" for="friend1">Email to friend 1</label>
@@ -32,11 +39,48 @@
         <input class="input" type="text" name="friend3" id="friend3" />
       </div>
       <div class="mt-4">
-        <label class="label" for="message">
-          <span>Your message</span>
-          <button style="float: right" class="button-link">Preview mail</button>
-        </label>
-        <textarea name="message" id="message" class="input" rows="4"></textarea>
+        <label class="label" for="message-input">Your personal message</label>
+        <textarea
+          id="message-input"
+          name="message"
+          id="message"
+          class="input"
+          rows="4"
+        ></textarea>
+        <details class="text-sm">
+          <summary style="color: var(--blue-600); cursor: pointer">
+            Preview the mail that will be sent to your friends
+          </summary>
+          <div
+            style="
+              background-color: var(--gray-100);
+              padding: 1.5rem;
+              border-radius: var(--radius-sm);
+            "
+            class="mt-2"
+          >
+            <p>Hello,</p>
+            <p>
+              <span class="name-output"></span> would like to recommend a
+              newsletter,
+              <a href="#">check it out here.</a>
+            </p>
+
+            <p>
+              <span
+                >Personal message from <span class="name-output"></span>:</span
+              ><br />
+              <span id="message-output"></span>
+            </p>
+
+            <p>Have a nice day!</p>
+
+            <p>
+              Ps. Clicking the link will not sign you up to anything, it just
+              displays the newsletter and gives you the possibility to sign up.
+            </p>
+          </div>
+        </details>
       </div>
       <div class="mt-6">
         <a
@@ -80,5 +124,23 @@
         </svg>
       </a>
     </div>
+
+    <script>
+      let nameInput = document.getElementById("name-input");
+      let nameOutputs = document.querySelectorAll(".name-output");
+
+      let messageInput = document.getElementById("message-input");
+      let messageOutput = document.getElementById("message-output");
+
+      nameInput.addEventListener("keyup", function (e) {
+        for (nameOutput of nameOutputs) {
+          nameOutput.innerText = e.target.value;
+        }
+      });
+
+      messageInput.addEventListener("keyup", function (e) {
+        messageOutput.innerText = e.target.value;
+      });
+    </script>
   </body>
 </html>

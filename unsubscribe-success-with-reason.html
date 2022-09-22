@@ -52,7 +52,7 @@
         </label>
       </div>
       <p class="mt-6">
-        <a href="/unsubscribe-success.html" class="button">Submit</a>
+        <button id="submit-button" disabled class="button">Submit</button>
       </p>
     </div>
     <div class="site-footer">
@@ -88,5 +88,15 @@
         </svg>
       </a>
     </div>
+
+    <script>
+      const submitButton = document.getElementById("submit-button");
+      const radioButtons = document.getElementsByName("reason");
+      for (const radioButton of radioButtons) {
+        radioButton.addEventListener("change", function (e) {
+          submitButton.removeAttribute("disabled");
+        });
+      }
+    </script>
   </body>
 </html>
