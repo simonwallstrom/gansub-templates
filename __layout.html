@@ -3,38 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Subscribe on Standard list · Get a Newsletter</title>
+    <!-- If specific title is set, it should be '{{title}} · Get a Newsletter', otherwise only 'Get a Newsletter' -->
+    <title>{{title}} · Get a Newsletter</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="shortcut icon" href="favicon.svg" />
   </head>
   <body>
     <div class="site-wrapper">
-      <h1>Subscribe on Standard list</h1>
-      <p>
-        By signing up you will be subscribed on
-        <strong>Standard list</strong> managed by
-        <strong>Simon Wallström</strong>. You can unsubscribe anytime by using
-        the link provided in each newsletter.
-      </p>
-      <form action="/embedded-form-success.html">
-        <div class="mt-6">
-          <label class="label" for="email">Email *</label>
-          <input required class="input" type="email" name="email" id="email" />
-          <!-- Server validation -->
-          <!-- <div class="input-error">This field is required</div> -->
-        </div>
-        <div class="mt-4">
-          <label class="label" for="firstName">First name</label>
-          <input class="input" type="text" name="firstName" id="firstName" />
-        </div>
-        <div class="mt-4">
-          <label class="label" for="lastName">Last name</label>
-          <input class="input" type="text" name="lastName" id="lastName" />
-        </div>
-        <div class="mt-8">
-          <button class="button button--block">Subscribe</button>
-        </div>
-      </form>
+      <!-- {% block content %}{% endblock %} -->
     </div>
     <div class="site-footer">
       <span>Powered by</span>

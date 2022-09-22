@@ -11,11 +11,19 @@
     <div class="site-wrapper">
       <h1>Unsubscribe</h1>
       <p>Are you sure you want to unsubscribe from this list?</p>
-      <p class="mt-6">
-        <a href="/unsubscribe-success.html" class="button"
-          >Yes, unsubscribe me</a
-        >
-      </p>
+      <form action="/unsubscribe-success.html">
+        <div>
+          <label class="checkbox-group" for="confirm">
+            <input required type="checkbox" name="confirm" id="confirm" />
+            <span>Yes, unsubscribe me</span>
+          </label>
+          <!-- Server validation -->
+          <!-- <div class="input-error">This field is required</div> -->
+        </div>
+        <div class="mt-6">
+          <button class="button">Confirm unsubscription</button>
+        </div>
+      </form>
     </div>
     <div class="site-footer">
       <span>Powered by</span>

@@ -14,44 +14,44 @@
         Update your contact details below. If you update your email, a
         confirmation mail will be sent to your new email address.
       </p>
-      <div class="mt-6">
-        <label class="label" for="email">Email</label>
-        <input
-          class="input"
-          value="simon@getanewsletter.com"
-          type="text"
-          name="email"
-          id="email"
-        />
-      </div>
-      <div class="mt-4">
-        <label class="label" for="firstName">First name</label>
-        <input
-          class="input"
-          value="Simon"
-          type="text"
-          name="firstName"
-          id="firstName"
-        />
-      </div>
-      <div class="mt-4">
-        <label class="label" for="lastName">Last name</label>
-        <input
-          class="input"
-          value="Wallström"
-          type="text"
-          name="lastName"
-          id="lastName"
-        />
-      </div>
-      <div class="mt-8">
-        <a
-          href="/update-contact-success.html"
-          style="display: block"
-          class="button"
-          >Subscribe</a
-        >
-      </div>
+      <form action="/update-contact-success.html">
+        <div class="mt-6">
+          <label class="label" for="email">Email</label>
+          <input
+            required
+            class="input"
+            value="simon@getanewsletter.com"
+            type="text"
+            name="email"
+            id="email"
+          />
+          <!-- Server validation -->
+          <!-- <div class="input-error">This field is required</div> -->
+        </div>
+        <div class="mt-4">
+          <label class="label" for="firstName">First name</label>
+          <input
+            class="input"
+            value="Simon"
+            type="text"
+            name="firstName"
+            id="firstName"
+          />
+        </div>
+        <div class="mt-4">
+          <label class="label" for="lastName">Last name</label>
+          <input
+            class="input"
+            value="Wallström"
+            type="text"
+            name="lastName"
+            id="lastName"
+          />
+        </div>
+        <div class="mt-8">
+          <button class="button button--block">Subscribe</button>
+        </div>
+      </form>
     </div>
     <div class="site-footer">
       <span>Powered by</span>

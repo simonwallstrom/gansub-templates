@@ -38,6 +38,7 @@
   --green-800: #065f46;
   --green-900: #064e3b;
 
+  --font-size-xs: 0.8125rem;
   --font-size-sm: 0.875rem;
 
   --radius-sm: 6px;
@@ -187,9 +188,9 @@ a:hover {
   color: #fff;
 }
 
-.button:disabled {
-  opacity: 0.5;
-  cursor: default;
+.button--block {
+  display: block;
+  width: 100%;
 }
 
 .button:disabled:hover {
@@ -215,6 +216,12 @@ a:hover {
   margin-top: 5px;
 }
 
+.checkbox-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .unsubscribe-reason {
   display: flex;
   flex-direction: column;
@@ -238,6 +245,14 @@ a:hover {
 
 .text-sm {
   font-size: var(--font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.font-mono {
+  font-family: "ui-monospace","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace";
 }
 
 .mt-0 {
