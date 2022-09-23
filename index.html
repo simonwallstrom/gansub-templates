@@ -15,37 +15,60 @@
         width: 100%;
         background: #fff;
         padding: 1rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+      .temp-header--list {
         font-size: 12px;
         display: flex;
         flex-wrap: wrap;
-        row-gap: 0.5rem;
-        column-gap: 1rem;
+        column-gap: 10px;
+        row-gap: 2px;
+        margin-top: 10px;
       }
     </style>
   </head>
   <body>
     <!-- TEMP HEADER – This is only here for dev purposes, remove in prod -->
     <div class="temp-header">
-      <a href="/unsubscribe.html">Unsubscribe</a>
-      <a href="/unsubscribe-success.html">Unsubscribe success</a>
-      <a href="/unsubscribe-success-with-reason.html"
-        >Unsubscribe success(With reason ONLY DEMO)</a
-      >
-      <a href="/already-unsubscribed.html">Already unsubscribed</a>
-      <a href="/resubscribe.html">Resubscribe</a>
-      <a href="/embedded-form.html">Embedded form</a>
-      <a href="/embedded-form-success.html">Embedded form success</a>
-      <a href="/embedded-form-confirm.html">Embedded form confirm</a>
-      <a href="/embedded-form-already-confirmed.html"
-        >Embedded form already confirm</a
-      >
-      <a href="/update-contact.html">Update contact</a>
-      <a href="/update-contact-success.html">Update contact success</a>
-      <a href="/gdpr.html">GDPR</a>
-      <a href="/tell-a-friend.html">Tell a friend</a>
-      <a href="/tell-a-friend-success.html">Tell a friend success</a>
-      <a href="/test-page-unsubscribe.html">Test page – Unsubscribe</a>
-      <a href="/test-page-tell-a-friend.html">Test page – Tell a friend</a>
+      <details class="text-sm">
+        <summary style="color: var(--blue-600); cursor: pointer">
+          Show available pages
+        </summary>
+        <div>
+          <div class="temp-header--list">
+            <span>Redesigned pages:</span>
+            <a href="/unsubscribe.html">Unsubscribe</a>
+            <a href="/unsubscribe-success.html">Unsubscribe success</a>
+            <a href="/already-unsubscribed.html">Already unsubscribed</a>
+            <a href="/resubscribe.html">Resubscribe</a>
+            <a href="/embedded-form.html">Embedded form</a>
+            <a href="/embedded-form-success.html">Embedded form success</a>
+            <a href="/embedded-form-confirm.html">Embedded form confirm</a>
+            <a href="/embedded-form-already-confirmed.html"
+              >Embedded form already confirm</a
+            >
+            <a href="/update-contact.html">Update contact</a>
+            <a href="/update-contact-success.html">Update contact success</a>
+            <a href="/gdpr.html">GDPR</a>
+            <a href="/tell-a-friend.html">Tell a friend</a>
+            <a href="/tell-a-friend-success.html">Tell a friend success</a>
+            <a href="/test-page-unsubscribe.html">Test page – Unsubscribe</a>
+            <a href="/test-page-tell-a-friend.html"
+              >Test page – Tell a friend</a
+            >
+          </div>
+          <div class="temp-header--list">
+            <span>New pages:</span>
+            <a href="/unsubscribe-success-with-reason.html"
+              >Unsubscribe success(With reason)</a
+            >
+            <a href="/test-page-update-contact.html"
+              >Test page – Update contact</a
+            >
+            <a href="/test-page-gdpr.html">Test page – GDPR</a>
+          </div>
+        </div>
+      </details>
     </div>
 
     <div class="site-wrapper">
