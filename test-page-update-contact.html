@@ -8,13 +8,94 @@
     <link rel="shortcut icon" href="favicon.svg" />
   </head>
   <body>
-    <div class="site-wrapper">
-      <h1>Test page – Update contact</h1>
+    <div class="info-box">
+      <div class="info-box--icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="45"
+          fill="var(--blue-600)"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <circle cx="128" cy="128" r="96" opacity="0.2"></circle>
+          <circle
+            cx="128"
+            cy="128"
+            r="96"
+            fill="none"
+            stroke="var(--blue-600)"
+            stroke-miterlimit="10"
+            stroke-width="16"
+          ></circle>
+          <line
+            x1="128"
+            y1="80"
+            x2="128"
+            y2="136"
+            fill="none"
+            stroke="var(--blue-600)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <circle cx="128" cy="172" r="12"></circle>
+        </svg>
+      </div>
+      <div class="info-box--text">
+        <strong>This is a test page for the Update contact-link.</strong> If
+        this was a real newsletter the recipient would have the option to update
+        their contact details. In other words, your link works as expected.
+      </div>
+    </div>
+    <div class="site-wrapper relative overflow-hidden mt-6">
+      <span class="test-mode-banner">Test</span>
+      <h1>Update your contact details</h1>
       <p>
-        This is a test page for the Update contact-link. If this was a real
-        newsletter the recipient would have the option to update their contact
-        details. In other words, your Update contact-link works as expected.
+        Update your contact details below. If you update your email, a
+        confirmation mail will be sent to your new email address.
       </p>
+      <div class="mt-6">
+        <label class="label" for="email">Email</label>
+        <input
+          disabled="true"
+          required
+          class="input"
+          value="test@example.com"
+          type="text"
+          name="email"
+          id="email"
+        />
+        <!-- Server validation -->
+        <!-- <div class="input-error">This field is required</div> -->
+      </div>
+      <div class="mt-4">
+        <label class="label" for="firstName">First name</label>
+        <input
+          disabled="true"
+          class="input"
+          value="John"
+          type="text"
+          name="firstName"
+          id="firstName"
+        />
+      </div>
+      <div class="mt-4">
+        <label class="label" for="lastName">Last name</label>
+        <input
+          disabled="true"
+          class="input"
+          value="Doe"
+          type="text"
+          name="lastName"
+          id="lastName"
+        />
+      </div>
+      <div class="mt-8">
+        <button disabled="true" class="button button--block">
+          Update contact details
+        </button>
+      </div>
     </div>
     <div class="site-footer">
       <span>Powered by</span>

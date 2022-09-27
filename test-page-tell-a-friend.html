@@ -8,13 +8,153 @@
     <link rel="shortcut icon" href="favicon.svg" />
   </head>
   <body>
-    <div class="site-wrapper">
-      <h1>Test page – Tell a friend</h1>
+    <div class="info-box">
+      <div class="info-box--icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="45"
+          fill="var(--blue-600)"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <circle cx="128" cy="128" r="96" opacity="0.2"></circle>
+          <circle
+            cx="128"
+            cy="128"
+            r="96"
+            fill="none"
+            stroke="var(--blue-600)"
+            stroke-miterlimit="10"
+            stroke-width="16"
+          ></circle>
+          <line
+            x1="128"
+            y1="80"
+            x2="128"
+            y2="136"
+            fill="none"
+            stroke="var(--blue-600)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <circle cx="128" cy="172" r="12"></circle>
+        </svg>
+      </div>
+      <div class="info-box--text">
+        <strong>This is a test page for the tell a friend-link.</strong> If this
+        was a real newsletter the recipient would have the option to share your
+        newsletter with friends. In other words, the link works as expected.
+      </div>
+    </div>
+    <div class="site-wrapper relative overflow-hidden mt-6">
+      <span class="test-mode-banner">Test</span>
+      <h1>Tell your friends about this newsletter</h1>
       <p>
-        This is a test page for the Tell a friend-link. If this was a real
-        newsletter the recipient would have the option to share your newsletter
-        with friends. In other words, your Tell a friend-link works as expected.
+        Your friends will get a link to the newsletter and a chance to subscribe
+        for themselves. The email addresses will not be saved for marketing or
+        any other purposes.
       </p>
+      <div class="mt-6">
+        <label class="label" for="name-input">Your name</label>
+        <input
+          id="name-input"
+          class="input"
+          disabled="true"
+          type="text"
+          required="true"
+          name="name"
+          id="name"
+          placeholder="Your name here..."
+        />
+      </div>
+      <div class="mt-4">
+        <label class="label" for="friend1">Email to friend 1</label>
+        <input
+          class="input"
+          disabled="true"
+          type="text"
+          name="friend1"
+          id="friend1"
+        />
+        <!-- Server validation -->
+        <!-- <div class="input-error">
+            You must enter atleast one email address
+          </div> -->
+      </div>
+      <div class="mt-4">
+        <label class="label" for="friend2">Email to friend 2</label>
+        <input
+          disabled="true"
+          class="input"
+          type="text"
+          name="friend2"
+          id="friend2"
+        />
+      </div>
+      <div class="mt-4">
+        <label class="label" for="friend3">Email to friend 3</label>
+        <input
+          disabled="true"
+          class="input"
+          type="text"
+          name="friend3"
+          id="friend3"
+        />
+      </div>
+      <div class="mt-4">
+        <label class="label" for="message-input">Your message</label>
+        <textarea
+          disabled="true"
+          id="message-input"
+          name="message"
+          id="message"
+          class="input"
+          rows="4"
+          placeholder="Your personal message here..."
+        ></textarea>
+        <details class="text-sm">
+          <summary style="color: var(--blue-600); cursor: pointer">
+            Preview the mail that will be sent to your friends
+          </summary>
+          <div
+            style="
+              background-color: var(--gray-100);
+              padding: 1.5rem;
+              border-radius: var(--radius-sm);
+            "
+            class="mt-2 text-xs font-mono"
+          >
+            <p>Hello,</p>
+            <p>
+              <span class="name-output">&lt;Your name here&gt;</span> would like
+              to recommend a newsletter,
+              <a href="#">check it out here.</a>
+            </p>
+
+            <p>
+              <span
+                >Personal message from
+                <span class="name-output">&lt;Your name here&gt;</span>:</span
+              ><br />
+              <span id="message-output"
+                >&lt;Your personal message here&gt;</span
+              >
+            </p>
+
+            <p>Have a nice day!</p>
+
+            <p>
+              Ps. Clicking the link will not sign you up to anything, it just
+              displays the newsletter and gives you the possibility to sign up.
+            </p>
+          </div>
+        </details>
+      </div>
+      <div class="mt-6">
+        <button disabled class="button button--block">Tell my friends</button>
+      </div>
     </div>
     <div class="site-footer">
       <span>Powered by</span>
