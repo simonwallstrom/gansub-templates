@@ -208,18 +208,6 @@ hr {
   color: var(--blue-900);
 }
 
-.pdf-info-box {
-  background: var(--gray-100);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.5rem;
-  margin-top: 1rem;
-  display: none;
-}
-
-.pdf-info-box.show {
-  display: block;
-}
-
 .overview-container {
   display: flex;
   margin-top: 40px;
@@ -455,10 +443,6 @@ hr {
   }
 
   .pre-header {
-    display: none !important;
-  }
-
-  .pdf-info-box {
     display: none !important;
   }
 
