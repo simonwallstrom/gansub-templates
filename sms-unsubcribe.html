@@ -3,87 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get a Newsletter</title>
+    <title>Subscribe on Standard list · Get a Newsletter</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="shortcut icon" href="favicon.svg" />
-    <style>
-      /* TEMP HEADER – This is only here for dev purposes, remove in prod */
-      .temp-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        padding: 1rem;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      }
-      .temp-header--list {
-        font-size: 12px;
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 10px;
-        row-gap: 2px;
-        margin-top: 10px;
-      }
-    </style>
   </head>
   <body>
-    <!-- TEMP HEADER – This is only here for dev purposes, remove in prod -->
-    <div class="temp-header">
-      <details class="text-sm">
-        <summary style="color: var(--blue-600); cursor: pointer">
-          Show available pages
-        </summary>
-        <div>
-          <div class="temp-header--list">
-            <span>Redesigned pages:</span>
-            <a href="/unsubscribe.html">Unsubscribe</a>
-            <a href="/unsubscribe-success.html">Unsubscribe success</a>
-            <a href="/already-unsubscribed.html">Already unsubscribed</a>
-            <a href="/resubscribe.html">Resubscribe</a>
-            <a href="/embedded-form.html">Embedded form</a>
-            <a href="/embedded-form-success.html">Embedded form success</a>
-            <a href="/embedded-form-confirm.html">Embedded form confirm</a>
-            <a href="/embedded-form-already-confirmed.html"
-              >Embedded form already confirm</a
-            >
-            <a href="/update-contact.html">Update contact</a>
-            <a href="/update-contact-success.html">Update contact success</a>
-            <a href="/gdpr.html">GDPR</a>
-            <a href="/tell-a-friend.html">Tell a friend</a>
-            <a href="/tell-a-friend-success.html">Tell a friend success</a>
-            <a href="/test-page-unsubscribe.html">Test page – Unsubscribe</a>
-            <a href="/test-page-tell-a-friend.html"
-              >Test page – Tell a friend</a
-            >
-          </div>
-          <div class="temp-header--list">
-            <span>Demo pages(DO NOT IMPLEMENT YET):</span>
-            <a href="/unsubscribe-success-with-reason.html"
-              >Unsubscribe success(With reason)</a
-            >
-            <a href="/test-page-update-contact.html"
-              >Test page – Update contact</a
-            >
-            <a href="/test-page-gdpr.html">Test page – GDPR</a>
-          </div>
-          <div class="temp-header--list">
-            <span>Public report</span>
-            <a href="/public-report.html">Public link to report ID</a>
-          </div>
-          <div class="temp-header--list">
-            <span>gan.nu</span>
-            <a href="/sms-unsubcribe.html">SMS unsubscribe</a>
-            <a href="/sms-unsubcribe-success.html">SMS unsubscribe success</a>
-          </div>
-        </div>
-      </details>
-    </div>
-
     <div class="site-wrapper">
-      <div>
+      <h1>Unsubscribe</h1>
+      <p>
+        Are you sure you want to unsubscribe from this list? Enter your SMS
+        number to unsubscribe.
+      </p>
+      <form action="/embedded-form-success.html">
+        <div class="mt-6">
+          <label class="label" for="sms">SMS number *</label>
+          <input required class="input" type="tel" name="sms" id="sms" />
+          <!-- Server validation -->
+          <!-- <div class="input-error">This field is required</div> -->
+        </div>
+        <div class="mt-6">
+          <a href="/sms-unsubscribe-success.html" class="button"
+            >Confirm unsubscription</a
+          >
+        </div>
+      </form>
+    </div>
+    <div class="site-footer">
+      <span>Powered by</span>
+      <a
+        style="margin-top: 2px"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.getanewsletter.com"
+      >
         <svg
-          width="180"
+          width="130"
           viewBox="0 0 261 37"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -105,16 +59,7 @@
             fill="#0D62CB"
           />
         </svg>
-
-        <h1 style="margin-top: 30px">Email marketing made simple.</h1>
-        <p>
-          Turn your visitors into regular customers with Get a Newsletter – the
-          easy-to-use email marketing tool for small businesses.
-        </p>
-        <p>
-          <a href="https://www.getanewsletter.com">Go to getanewsletter.com</a>
-        </p>
-      </div>
+      </a>
     </div>
   </body>
 </html>
