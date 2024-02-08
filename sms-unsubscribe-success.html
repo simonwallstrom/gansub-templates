@@ -3,14 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SMS Unsubscribe successful · Get a Newsletter</title>
+    <title>SMS Unsubscribe successful(with reason) · Get a Newsletter</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="shortcut icon" href="favicon.svg" />
   </head>
   <body>
     <div class="site-wrapper">
       <h1>Unsubscribe successful</h1>
-      <p>You will no longer recieve newsletters from this list.</p>
+      <p>
+        You will no longer recieve SMS from
+        <span style="font-weight: 500">&lt;sender_name&gt;</span>
+      </p>
+      <p>
+        <strong
+          >If you have a moment, can you tell us why you unsubscribed?</strong
+        >
+      </p>
+      <div class="unsubscribe-reason">
+        <label for="notWant">
+          <input name="reason" type="radio" name="notWant" id="notWant" />
+          <span>I no longer want to receive SMS</span>
+        </label>
+        <label for="neverSignedUp">
+          <input
+            name="reason"
+            type="radio"
+            name="neverSignedUp"
+            id="neverSignedUp"
+          />
+          <span>I never signed up for SMS in the first place</span>
+        </label>
+        <label for="inappropriate">
+          <input
+            name="reason"
+            type="radio"
+            name="inappropriate"
+            id="inappropriate"
+          />
+          <span>The SMS content are inappropriate</span>
+        </label>
+        <label for="spam">
+          <input name="reason" type="radio" name="spam" id="spam" />
+          <span>The SMS are spam and should be reported</span>
+        </label>
+        <label for="other">
+          <input name="reason" type="radio" name="other" id="other" />
+          <span>Other reason</span>
+        </label>
+      </div>
+      <p class="mt-6">
+        <button id="submit-button" disabled class="button">Submit</button>
+      </p>
     </div>
     <div class="site-footer">
       <span>Powered by</span>
@@ -45,5 +88,15 @@
         </svg>
       </a>
     </div>
+
+    <script>
+      const submitButton = document.getElementById("submit-button");
+      const radioButtons = document.getElementsByName("reason");
+      for (const radioButton of radioButtons) {
+        radioButton.addEventListener("change", function (e) {
+          submitButton.removeAttribute("disabled");
+        });
+      }
+    </script>
   </body>
 </html>
