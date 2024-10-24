@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WP forms</title>
+    <link rel="shortcut icon" href="favicon.svg" />
+    <style>
+      * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      :root {
+        --gan-radius: 0px;
+        --gan-color-field-background: #ffffff;
+        --gan-color-field-border: #cccccc;
+        --gan-color-label: #111111;
+        --gan-color-button-background: #0280FF;
+      }
+
+      .gan-form {
+        display: grid;
+        gap: 20px;
+      }
+      .gan-field-control {
+        display: grid;
+        gap: 10px;
+      }
+      .gan-label {
+        display: block;
+        font-weight: 600;
+        color: var(--gan-color-label);
+      }
+      .gan-input-field {
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid var(--gan-color-field-border);
+        border-radius: var(--gan-radius);
+        background: var(--gan-color-field-background);
+        height: 40px;
+        padding: 0 10px;
+      }
+      .gan-input-field:focus {
+        outline: 1px solid var(--gan-color-button-background);
+        /* outline-offset: 2px; */
+        border: 1px solid var(--gan-color-button-background);
+      }
+      .gan-button {
+        background: var(--gan-color-button-background);
+        color: white;
+        height: 40px;
+        padding: 0 30px;
+        border: var(--gan-color-button-background);
+        border-radius: var(--gan-radius);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .gan-button:hover {
+        opacity: .8;
+      }
+      .gan-button:focus-visible {
+        outline: 2px solid var(--gan-color-button-background);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body style="min-height: 100%; display: flex; margin: 0;">
+    <div style="display: flex; width: 100%;">
+      <main style="flex: 1; display: flex;">
+        <div style="max-width: 600px; margin: 100px auto;">
+          <h1>Join our newsletter</h1>
+          <p style="margin-bottom: 30px;">Get weekly access to our deals, tricks and tips</p>
+          <form class="gan-form">
+            <div class="gan-field-control">
+              <label class="gan-label" for="email">Email address</label>
+              <input class="gan-input-field" id="email" type="email" name="email" />
+            </div>
+            
+            <div class="gan-field-control">
+              <label class="gan-label" for="first_name">First name</label>
+              <input class="gan-input-field" id="first_name" type="text" name="first_name" />
+            </div>
+    
+            <div class="gan-field-control">
+              <label class="gan-label" for="last_name">Last name</label>
+              <input class="gan-input-field" id="last_name" type="text" name="last_name" />
+            </div>
+
+            <div class="gan-field-control">
+              <label class="gan-label" for="age">Age</label>
+              <input class="gan-input-field" id="age" type="number" name="age" />
+            </div>
+    
+            <div style="margin-top: 10px;">
+              <button class="gan-button" type="submit"><span>Subscribe</span></button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <aside style="width: 350px; border-left: 1px solid #eee; padding: 40px;">
+        <div>Design</div>
+        <div style="margin-top: 20px;">
+          <div>
+            <div style="margin-bottom: 10px;">Apperance</div>
+            <label for="square">
+              <input checked value="square" type="radio" name="appearance" id="square">
+              <span>Square</span>
+            </label>
+
+            <label for="rounded">
+              <input value="rounded" type="radio" name="appearance" id="rounded">
+              <span>Rounded</span>
+            </label>
+          </div>
+        </div>
+        <div style="margin-top: 20px; display: grid; gap: 5px;">
+          <div style="margin-bottom: 10px;">Colors</div>
+          <div>
+            <input value="#ffffff" type="color" name="" id="field_background">
+            <span>Field background</span>
+          </div>
+          <div>
+            <input value="#cccccc" type="color" name="" id="field_border">
+            <span>Field border</span>
+          </div>
+          <div>
+            <input value="#111111" type="color" name="" id="label">
+            <span>Label</span>
+          </div>
+          <div>
+            <input value="#0280FF" type="color" name="" id="button_background">
+            <span>Button background</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <script>
+      // Handle appearance change
+      const appearanceRadios = document.querySelectorAll('input[name="appearance"]');
+      appearanceRadios.forEach(radio => {
+        radio.addEventListener("change", (e) => {
+          const newRadius = e.target.value === "rounded" ? "8px" : "0px"; // Set radius based on value
+          document.documentElement.style.setProperty('--gan-radius', newRadius);
+        });
+      });
+
+      const fieldBackground = document.getElementById("field_background")
+      const fieldBorder = document.getElementById("field_border")
+      const label = document.getElementById("label")
+      const buttonBackground = document.getElementById("button_background")
+      const button = document.querySelector(".gan-button");
+
+      // Convert hex to RGB
+      function hexToRgb(hex) {
+        const strippedHex = hex.replace('#', '');
+        const bigint = parseInt(strippedHex, 16);
+        return {
+          r: (bigint >> 16) & 255,
+          g: (bigint >> 8) & 255,
+          b: bigint & 255
+        };
+      }
+
+      // Calculate brightness
+      function calculateBrightness({ r, g, b }) {
+        return (r * 299 + g * 587 + b * 114) / 1000;
+      }
+
+      // Update button text color based on brightness
+      function updateButtonTextColor(bgColor) {
+        const rgb = hexToRgb(bgColor);
+        const brightness = calculateBrightness(rgb);
+        const textColor = brightness < 128 ? 'white' : 'black';
+        button.style.color = textColor;
+      }
+      
+      fieldBackground.addEventListener("input", (e) => {
+        document.documentElement.style.setProperty('--gan-color-field-background', e.target.value);
+      })
+
+      fieldBorder.addEventListener("input", (e) => {
+        document.documentElement.style.setProperty('--gan-color-field-border', e.target.value);
+      })
+
+      label.addEventListener("input", (e) => {
+        document.documentElement.style.setProperty('--gan-color-label', e.target.value);
+      })
+
+      buttonBackground.addEventListener("input", (e) => {
+        const backgroundColor = e.target.value;
+        document.documentElement.style.setProperty('--gan-color-button-background', backgroundColor);
+        updateButtonTextColor(backgroundColor); // Update text color based on new background
+      });
+
+    </script>
+  </body>
+</html>
